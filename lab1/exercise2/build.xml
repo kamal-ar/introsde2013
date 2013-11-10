@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<project name="exercise2" default="compile" basedir=".">
+	<property name="SrcDir" value="src"/>
+	<property name="BuildDir" value="build" />
+	<property name="DistDir" value="dist" />
+	<target name="init">
+		<echo message="Init called.." />
+		<mkdir dir="${BuildDir}" />
+		<mkdir dir="${BuildDir}/classes" />
+		<mkdir dir="${DistDir}" />
+	</target>
+	<target name="compile" depends="init">
+		<echo message="Compiling.." />
+		<javac srcdir="${SrcDir}" destdir="${BuildDir}/classes" />
+	</target>
+	<target name="archive" depends="compile">
+		<echo message="Archiving.." />
+		<jar destfile="${DistDir}/app.jar" basedir="${BuildDir}/classes" />
+	</target>
+	<target name="execute" depends="compile">
+		<echo message="Executing.." />
+		<java classname="AddIntegers" classpath="${BuildDir}/classes" fork="yes">
+			<arg value="5" />
+			<arg value="3" />
+			<arg value="2" />
+		 </java>
+	</target>
+	<target name="clean">
+		<echo message="Cleaning.." />
+		<delete dir="${BuildDir}" />
+		<delete dir="${DistDir}" />
+	</target>
+</project>
