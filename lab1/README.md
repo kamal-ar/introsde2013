@@ -1,6 +1,6 @@
 Git, Java and ANT
 ===
-Kamalakannan A R
+Kamalakannan Amaravathy Rajarajan
 ===
 Introduction to Service Design and Engineering 2013/2014. 
 <br>*Lab session #3*
