@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<project name="myFirstANTProject" default="compile" basedir=".">
+
+    <property name="BuildDir" value="build"/>
+
+    <target name="init">
+        <echo message="Init has been called"/>
+        <mkdir dir="${BuildDir}" />
+	<mkdir dir="${BuildDir}/classes"/>
+	<mkdir dir="dist"/>
+        <echo message="${BuildDir}, ${BuildDir}/classes and dist have been created"/>
+    </target>
+    
+    <target name="compile" depends="init">
+        <echo message="Compile target has been called"/>
+        <javac srcdir="src" destdir="build/classes" />
+        <java classname="HealthProfileReader" classpath="build/classes" />
+    </target>
+    
+    <target name="archive" depends="compile">
+        <echo>Starting to archive...</echo>
+        <jar destfile="project.jar" basedir="dist">
+            <manifest>
+                <attribute name="Main-Class" value="HealthProfileReader" />
+                <attribute name="Class-Path" value="build/classes"/>
+            </manifest>
+        </jar>
+        <echo>Archived!</echo>
+    </target>
+
+    <target name="execute" depends="compile">
+        <java classname="HealthProfileReader" classpath="build/classes">
+		<arg value="Pinco"/>
+		<arg value="Pallino"/>
+		<arg value="BMI"/>
+	</java>
+    </target>
+
+    <target name="clean">
+        <delete dir="${BuildDir}"/>
+	<delete dir="dist"/> 
+    </target>
+
+</project>
