@@ -1,5 +1,5 @@
-introsde2013@UNITN
+Demo
 ============
 
 
-Code samples and projects for the course on "Introduction to Service Design and Engineering"
+Demo
