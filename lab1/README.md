@@ -1,6 +1,6 @@
 Git, Java and ANT
 ===
-Kamalakannan Amaravathy Rajarajan
+Larion
 ===
 Introduction to Service Design and Engineering 2013/2014. 
 <br>*Lab session #3*
@@ -53,15 +53,31 @@ Take a look to the .git folder. That's where the git filesystem is stored. Every
 
 ---
 
-Let’s create a new file```	touch README	git status
+Let’s create a new file
+
 ```
-**Observation:** if you're using windows, just create the README file in filesystem GUI (touch is shell program that creates a new file in unix/linux like systems)Stage your file
-```
-	git add README	git status```Commit your file
-```	git commit –m “new README”!	git status```
+	touch README
+	git status
+```
+**Observation:** if you're using windows, just create the README file in filesystem GUI (touch is shell program that creates a new file in unix/linux like systems)
+
+Stage your file
+
+```
+	git add README
+	git status
+```
+
+Commit your file
+
+```
+	git commit –m “new README”!
+	git status
+```
 
 ---
-That's it! You created a local repository, added a file and committed to the repository. This the basic you need to know. 
+
+That's it! You created a local repository, added a file and committed to the repository. This the basic you need to know. 
 
 ---
 
